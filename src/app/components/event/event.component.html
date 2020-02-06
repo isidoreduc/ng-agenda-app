@@ -1,14 +1,39 @@
-<!-- <h3>9:00 - Title</h3>
+<div *ngIf="isLogged; else loggedOut">
+    Welcome back
+</div>
+<ng-template #loggedOut>Please, log in</ng-template>
+
+<div class="media">
+  <h3 class="h3-responsive font-weight-bold mr-3">{{ value.time }}</h3>
+  <div class="media-body mb-3">
+    <mdb-badge danger="true" class="text-center float-right" (click)='handleDeleteClick()'>-</mdb-badge>
+    <h6 class="mt-0 font-weight-bold">{{ value.subject }}</h6>
+    <hr class="hr-bold mb-0 my-2" />
+    <p class="mb-0">
+      <mdb-icon fas icon="location-arrow" *ngIf="value.location"></mdb-icon>
+      {{ value.location }}
+    </p>
+  </div>
+</div>
+
+
+<p class="p-3 blue-grey lighten-5 blue-grey lighten-5" *ngIf="value.description">
+  {{ value.description }}
+</p>
+
+
+<!-- passing an object  -->
+<!-- <h1> {{value.time}} : {{value.location}} </h1>
+<p> Location: {{value.location}} </p>
+<p> Description: {{value.description}} </p> -->
+
+<!-- <h3>9:00 - Title</h3> -->
 
 <!-- passing data with ng-content and inputing the actual data between the component selector
 ex: <app-evemt>event1</app-event>  - renders 'event1'-->
-<ng-content></ng-content>
+<!-- <ng-content></ng-content> -->
 
 <!-- passing data using @Input in the child component and retrieving it with property binding in the parent component -->
 <!-- @Input allows passing data only from PARENT to CHILD -->
-<p>{{value}}</p> -->
+<!-- <p>{{value}}</p> -->
 
-<!-- passing an object  -->
-<h1> {{value.time}} : {{value.location}} </h1>
-<p> Location: {{value.location}} </p>
-<p> Description: {{value.description}} </p>

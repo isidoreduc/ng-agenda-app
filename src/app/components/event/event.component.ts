@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-event',
@@ -7,9 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EventComponent implements OnInit {
   @Input() value: any;
-  constructor() { }
+  @Output() deleteEventItem: EventEmitter<any> = new EventEmitter<any>();
+  isLogged = true;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  handleDeleteClick() {
+    this.deleteEventItem.emit(this.value);
   }
-
 }
