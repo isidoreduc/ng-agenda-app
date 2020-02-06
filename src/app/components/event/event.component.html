@@ -1,0 +1,14 @@
+<!-- <h3>9:00 - Title</h3>
+
+<!-- passing data with ng-content and inputing the actual data between the component selector
+ex: <app-evemt>event1</app-event>  - renders 'event1'-->
+<ng-content></ng-content>
+
+<!-- passing data using @Input in the child component and retrieving it with property binding in the parent component -->
+<!-- @Input allows passing data only from PARENT to CHILD -->
+<p>{{value}}</p> -->
+
+<!-- passing an object  -->
+<h1> {{value.time}} : {{value.location}} </h1>
+<p> Location: {{value.location}} </p>
+<p> Description: {{value.description}} </p>
